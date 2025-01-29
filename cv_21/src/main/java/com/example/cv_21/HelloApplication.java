@@ -23,7 +23,7 @@ public class HelloApplication extends Application {
     int colorNumber = 1;
 
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) {
         VBox root = new VBox();
         Canvas canvas = new Canvas(SCREEN_WIDTH, SCREEN_HEIGHT);
         root.getChildren().add(canvas);
