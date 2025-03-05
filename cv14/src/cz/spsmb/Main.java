@@ -3,6 +3,7 @@ package cz.spsmb;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.Scanner;
 
 public class Main {
@@ -16,6 +17,7 @@ public class Main {
         }
         finally {
             System.out.println("TADY.");
+
         }
 
         Scanner scanner = new Scanner(file);
@@ -25,6 +27,19 @@ public class Main {
             data[i] = scanner.nextLine();
             i++;
         }
+        scanner.close();
         System.out.println(data[1]);
+
+        try {
+
+            Thread.sleep(1000L);
+            System.out.println(Files.deleteIfExists(file.toPath()));
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
+
+
 }
